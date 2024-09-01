@@ -13,7 +13,7 @@ app.use(cors());
 
 
 
-app.post("/api/booking", async (req, res) => {
+app.post("https://bookmyshow-backend-o9r5.onrender.com/api/booking", async (req, res) => {
   const  bookingData = req.body;
 
   const booking = new connection(bookingData);
@@ -27,7 +27,7 @@ app.post("/api/booking", async (req, res) => {
  
 
 });
-app.get("/api/lastbooking", async (req, res) => {
+app.get("https://bookmyshow-backend-o9r5.onrender.com/api/lastbooking", async (req, res) => {
   try {
     const lastBooking = await connection.findOne().sort({ _id: -1 });
     if (!lastBooking) return res.status(404).send("No bookings found");
